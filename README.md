@@ -1,5 +1,5 @@
 <p align="center">
-<img src="https://reflexphoto.eu/logos/banniere_rp_bnw.png">
+<img src="https://github.com/ReflexPhoto/ReflexPhotoWPF/raw/main/logorp.png">
 </p>
 
 # Application ReflexPhoto
@@ -9,3 +9,4 @@ Fonds d'écran dynamique ReflexPhoto pour Windows 10.
 
 ## Installation :
 https://www.microsoft.com/store/apps/9NGSMZ58RXQH
+![alt text](https://github.com/ReflexPhoto/ReflexPhotoWPF/raw/main/msstore.png) ![alt text](https://github.com/ReflexPhoto/ReflexPhotoWPF/raw/main/pegi3.png)
