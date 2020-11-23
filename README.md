@@ -1,5 +1,5 @@
 <p align="center">
-<img src="https://reflexphoto.eu/styles/ReflexPhoto/theme/images/site_logo.gif">
+<img src="https://reflexphoto.eu/logos/banniere_rp_bnw.png">
 </p>
 
 # Application ReflexPhoto
