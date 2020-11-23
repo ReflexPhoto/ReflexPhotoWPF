@@ -1,0 +1,83 @@
+﻿<!---
+Copyright ReflexPhoto © 2020 - Tous droits réservés
+https://reflexphoto.eu <dev@reflexphoto.eu>
+-->
+<Window x:Class="ReflexPhotoWPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ReflexPhotoWPF"
+        mc:Ignorable="d"
+        Title="Fonds d'écran ReflexPhoto"
+        Height="Auto" Width="Auto"
+        Icon="favicon.ico"
+        AllowsTransparency="True"
+        Background="Transparent"
+        SizeToContent="WidthAndHeight"
+        ResizeMode="NoResize"
+        WindowStyle="None"
+        MouseDown="Window_MouseDown"
+        FontSize="16"
+        FontWeight="Normal">
+    <Grid VerticalAlignment="Center" HorizontalAlignment="Center">
+        <Border HorizontalAlignment="Center" VerticalAlignment="Center" BorderBrush="DarkOrange" BorderThickness="2" CornerRadius="4" Background="#CD33695f">
+            <Grid VerticalAlignment="Center" HorizontalAlignment="Center" Background="Transparent">
+                <StackPanel Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="5,5,10,8">
+                    <StackPanel.Background>
+                        <ImageBrush ImageSource="fond.png" Stretch="None" AlignmentX="Right" AlignmentY="Center" Opacity="0.6" />
+                    </StackPanel.Background>
+                    <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                        <Label Content="Fond d'écran :" VerticalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="WhiteSmoke"/>
+                        <ComboBox Name="cbb_TypeFondEcran" MinWidth="120" MinHeight="24" SelectionChanged="Cbb_TypeFondEcran_SelectionChanged" VerticalContentAlignment="Center" VerticalAlignment="Center" Cursor="Hand">
+                            <ComboBoxItem IsSelected="True">Best-Of</ComboBoxItem>
+                            <ComboBoxItem>Page d'accueil</ComboBoxItem>
+                        </ComboBox>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="0,10,0,0" VerticalAlignment="Center">
+                        <Label Content="Modifier le fond d'écran toutes les :" VerticalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="WhiteSmoke"/>
+                        <TextBox Name="tb_ChangeInterval" Margin="0,2,0,0" Text="1" TextWrapping="Wrap" MinWidth="35" MinHeight="24" MaxLines="1" MaxLength="2" VerticalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Center" PreviewTextInput="TextBox_PreviewTextInput" DataObject.Pasting="TextBox_Pasting" TextChanged="Tb_ChangeInterval_TextChanged"/>
+                        <ComboBox Name="cbb_ChangeIntervalType" Margin="5,2,0,0" MinWidth="85" MinHeight="24" Cursor="Hand" SelectionChanged="Cbb_ChangeIntervalType_SelectionChanged"  VerticalContentAlignment="Center" VerticalAlignment="Center">
+                            <ComboBoxItem>jour(s)</ComboBoxItem>
+                            <ComboBoxItem IsSelected="True">heure(s)</ComboBoxItem>
+                            <ComboBoxItem>minute(s)</ComboBoxItem>
+                            <ComboBoxItem>seconde(s)</ComboBoxItem>
+                        </ComboBox>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="0,10,0,0" VerticalAlignment="Center">
+                        <Label Content="Aspect :" VerticalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="WhiteSmoke"/>
+                        <ComboBox Name="cbb_AspectRatioType" Margin="5,2,0,0" MinWidth="70" MinHeight="24" Cursor="Hand" SelectionChanged="cbb_AspectRatioType_SelectionChanged"  VerticalContentAlignment="Center" VerticalAlignment="Center">
+                            <ComboBoxItem>Remplir</ComboBoxItem>
+                            <ComboBoxItem IsSelected="True">Ajusté</ComboBoxItem>
+                            <ComboBoxItem>Étiré</ComboBoxItem>
+                            <ComboBoxItem>Centré</ComboBoxItem>
+                            <ComboBoxItem>Mosaïque</ComboBoxItem>
+                            <ComboBoxItem>Étendu</ComboBoxItem>
+                        </ComboBox>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="0,10,0,0" VerticalAlignment="Center">
+                        <Label Content="Démarrer avec Windows :" VerticalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="WhiteSmoke"/>
+                        <CheckBox Name="cb_StartWithWindows" IsChecked="True" Cursor="Hand" VerticalContentAlignment="Center" VerticalAlignment="Center" Checked="Cb_StartWithWindows_Checked" Unchecked="Cb_StartWithWindows_Unchecked" />
+                    </StackPanel>
+                    <StackPanel Orientation="Vertical" Margin="0,10,0,0" VerticalAlignment="Center" HorizontalAlignment="Center">
+                        <TextBlock Name="lbl_ErrorMsg" Text="Impossible de sauvegarder :&#x0a;Raison." TextWrapping="Wrap" TextAlignment="Center" MinHeight="35" HorizontalAlignment="Center" VerticalAlignment="Center" FontStyle="Italic" Foreground="DarkOrange"/>
+                        <Button Name="btn_SaveSettings" Content="Appliquer les nouveaux paramètres" MinWidth="200" MinHeight="28" Padding="10,1,10,5" Click="Btn_SaveSettings_Click" Cursor="Hand" />
+                    </StackPanel>
+                </StackPanel>
+                <TextBlock Text="X" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0,0,8,0" FontSize="20" FontWeight="SemiBold" PreviewMouseDown="TextBlock_PreviewMouseDown" ToolTip="Réduire dans la zone de notifications">
+                    <TextBlock.Style>
+                        <Style TargetType="TextBlock">
+                            <Setter Property="Foreground" Value="WhiteSmoke" />
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Foreground" Value="DarkOrange" />
+                                    <Setter Property="Cursor" Value="Hand" />
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </TextBlock.Style>
+                </TextBlock>
+            </Grid>
+        </Border>
+    </Grid>
+</Window>
